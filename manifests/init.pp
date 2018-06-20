@@ -6,16 +6,16 @@
 #   include configure_nginx
 class configure_nginx {
   file { '/var/www/':
-    ensure  => directory,
-    mode    => '0644',
-    owner   => www-data,
-    group   => www-data,
+    ensure => directory,
+    mode   => '0644',
+    owner  => www-data,
+    group  => www-data,
   }
   file { '/var/www/mini-proj-simple-site':
-    ensure  => directory,
-    mode    => '0644',
-    owner   => www-data,
-    group   => www-data,
+    ensure => directory,
+    mode   => '0644',
+    owner  => www-data,
+    group  => www-data,
   }
   file { '/var/www/mini-proj-simple-site/index.html':
     ensure  => file,
@@ -28,6 +28,7 @@ class configure_nginx {
     ensure => absent,
   }
 
+  include nginx
   nginx::resource::server { 'mini-proj-simple-site':
     ensure   => present,
     www_root => '/var/www/mini-proj-simple-site',
