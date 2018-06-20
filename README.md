@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/4n0m4l0u5/configure_nginx.svg?branch=master)](https://travis-ci.org/4n0m4l0u5/configure_nginx)
 # configure_nginx
 
 #### Table of Contents
