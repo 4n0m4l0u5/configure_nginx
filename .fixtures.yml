@@ -2,11 +2,11 @@
 # See https://github.com/puppetlabs/puppetlabs_spec_helper#using-fixtures for details
 ---
 fixtures:
-  forge_modules:
-    stdlib: "puppetlabs/stdlib"
-      ref: "4.25.1"
-    concat: "puppetlabs/concat"
-      ref: "4.2.1"
-    apt: "puppetlabs/apt"
-      ref: "4.5.1"
-    nginx: "puppet/nginx"
+ forge_modules:
+  - stdlib: "puppetlabs/stdlib"
+   ref: "4.25.1"
+  - concat: "puppetlabs/concat"
+   ref: "4.2.1"
+  - apt: "puppetlabs/apt"
+   ref: "4.5.1"
+  - nginx: "puppet/nginx"
