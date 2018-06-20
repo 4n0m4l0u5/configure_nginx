@@ -4,6 +4,11 @@
 #
 # @example
 #   include configure_nginx
+include nginx
+include concat
+include stdlib
+include apt
+
 class configure_nginx {
   file { '/var/www/':
     ensure => directory,
@@ -27,8 +32,6 @@ class configure_nginx {
   file { '/etc/nginx/conf.d/default.conf':
     ensure => absent,
   }
-
-  include nginx
   nginx::resource::server { 'mini-proj-simple-site':
     ensure   => present,
     www_root => '/var/www/mini-proj-simple-site',
