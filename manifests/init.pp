@@ -4,12 +4,14 @@
 #
 # @example
 #   include configure_nginx
-include concat
-include stdlib
-include apt
-include nginx
+
 
 class configure_nginx {
+  include stdlib
+  include concat
+  include apt
+  include nginx
+
   file { '/var/www/':
     ensure => directory,
     mode   => '0644',
