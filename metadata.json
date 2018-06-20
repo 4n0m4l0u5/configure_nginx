@@ -7,10 +7,10 @@
   "source": "https://github.com/4n0m4l0u5/configure_nginx",
   "dependencies": [
     {
-      "name":"puppet/nginx","version_requirement":">= 0.12.0 < 1.0.0",
       "name":"puppetlabs/stdlib","version_requirement":">= 4.25.1 < 5.0.0",
       "name":"puppetlabs/concat","version_requirement":">= 4.2.1 < 5.0.0",
-      "name":"puppetlabs/apt","version_requirement":">= 4.5.1 < 5.0.0"
+      "name":"puppetlabs/apt","version_requirement":">= 4.5.1 < 5.0.0",
+      "name":"puppet/nginx","version_requirement":">= 0.12.0 < 1.0.0",
     }
 
   ],
