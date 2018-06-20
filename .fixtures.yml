@@ -4,6 +4,10 @@
 fixtures:
   forge_modules:
     stdlib: "puppetlabs/stdlib"
-    nginx: "puppet/nginx"
+      ref: "4.25.1"
     concat: "puppetlabs/concat"
+      ref: "4.2.1"
     apt: "puppetlabs/apt"
+      ref: "4.5.1"
+    nginx: "puppet/nginx"
+      ref: "0.12.0"

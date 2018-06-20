@@ -4,10 +4,10 @@
 #
 # @example
 #   include configure_nginx
-include nginx
 include concat
 include stdlib
 include apt
+include nginx
 
 class configure_nginx {
   file { '/var/www/':
