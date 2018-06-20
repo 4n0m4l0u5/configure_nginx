@@ -10,4 +10,3 @@ fixtures:
     apt: "puppetlabs/apt"
       ref: "4.5.1"
     nginx: "puppet/nginx"
-      ref: "0.12.0"
