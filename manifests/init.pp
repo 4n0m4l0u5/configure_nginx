@@ -10,7 +10,7 @@ class{ 'nginx' :
     package_source => 'nginx-stable'
 }
 class configure_nginx {
-#  include nginx
+  include nginx
 
   file { '/var/www/':
     ensure => directory,
