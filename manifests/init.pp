@@ -5,9 +5,12 @@
 # @example
 #   include configure_nginx
 
-
+class{"nginx":
+    manage_repo => true,
+    package_source => 'nginx-stable'
+}
 class configure_nginx {
-  include nginx
+#  include nginx
 
   file { '/var/www/':
     ensure => directory,
