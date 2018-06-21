@@ -3,12 +3,6 @@
 ---
 fixtures:
  forge_modules:
-  stdlib:
-   repo: "puppetlabs/stdlib"
-   ref: "4.25.1"
-  concat:
-   repo: "puppetlabs/concat"
-   ref: "4.2.1"
   apt:
    repo: "puppetlabs/apt"
    ref: "4.5.1"
