@@ -8,7 +8,13 @@
 class{ 'nginx' :
     manage_repo    => true,
     package_source => 'nginx-stable'
+
+    nginx::resource::server { 'mini-proj-simple-site':
+      ensure   => present,
+      www_root => '/var/www/mini-proj-simple-site',
+    }
 }
+
 class configure_nginx {
   file { '/var/www/':
     ensure => directory,
