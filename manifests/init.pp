@@ -12,7 +12,7 @@ class configure_nginx {
     }
 
     exec { 'curl-site':
-      command => "curl ${ipaddress_eth0}",
+      command => 'curl localhost',
       require => Package['curl'],
     }
     class { 'nginx': }
@@ -46,9 +46,9 @@ class configure_nginx {
       group   => www-data,
       content => 'Automation for the People',
     }
-   exec { 'curl-site': }
+    exec { 'curl-site': }
 #    file { '/etc/nginx/conf.d/default.conf':
 #      ensure => absent,
 #    }
-    
+
 }
