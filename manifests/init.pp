@@ -7,7 +7,6 @@
 
 
 class configure_nginx {
-  include apt
   include nginx
 
   file { '/var/www/':

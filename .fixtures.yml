@@ -3,9 +3,6 @@
 ---
 fixtures:
  forge_modules:
-  apt:
-   repo: "puppetlabs/apt"
-   ref: "4.5.1"
   nginx:
    repo: "puppet/nginx"
    ref: "0.12.0"
