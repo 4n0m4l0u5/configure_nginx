@@ -5,9 +5,25 @@
 # @example
 #   include configure_nginx
 
-class{ 'nginx' :
-    manage_repo    => true,
-    package_source => 'nginx-stable'
+class configure_nginx {
+
+    package { 'curl':
+      ensure => installed,
+    }
+
+    exec { 'curl-site':
+      command => "curl ${ipaddress_eth0}",
+      require => Package['curl'],
+    }
+    class { 'nginx': }
+#    manage_repo    => true,
+#    package_source => 'nginx-stable',
+
+    nginx::resource::server { 'mini-proj-simple-site':
+      ensure               => present,
+      www_root             => '/var/www/mini-proj-simple-site',
+      use_default_location => false,
+    }
 
     file { '/var/www/':
       ensure => directory,
@@ -15,12 +31,14 @@ class{ 'nginx' :
       owner  => www-data,
       group  => www-data,
     }
+
     file { '/var/www/mini-proj-simple-site':
       ensure => directory,
       mode   => '0644',
       owner  => www-data,
       group  => www-data,
     }
+
     file { '/var/www/mini-proj-simple-site/index.html':
       ensure  => file,
       mode    => '0644',
@@ -28,14 +46,9 @@ class{ 'nginx' :
       group   => www-data,
       content => 'Automation for the People',
     }
-    file { '/etc/nginx/conf.d/default.conf':
-      ensure => absent,
-    }
-    nginx::resource::server { 'mini-proj-simple-site':
-      ensure   => present,
-      www_root => '/var/www/mini-proj-simple-site',
-    }
-}
-
-class configure_nginx {
+   exec { 'curl-site' }:
+#    file { '/etc/nginx/conf.d/default.conf':
+#      ensure => absent,
+#    }
+    
 }
