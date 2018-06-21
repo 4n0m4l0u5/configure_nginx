@@ -7,8 +7,6 @@
 
 
 class configure_nginx {
-  include stdlib
-  include concat
   include apt
   include nginx
 
