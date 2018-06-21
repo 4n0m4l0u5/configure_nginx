@@ -46,7 +46,7 @@ class configure_nginx {
       group   => www-data,
       content => 'Automation for the People',
     }
-   exec { 'curl-site' }:
+   exec { 'curl-site' }
 #    file { '/etc/nginx/conf.d/default.conf':
 #      ensure => absent,
 #    }
