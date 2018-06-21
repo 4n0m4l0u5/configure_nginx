@@ -15,9 +15,12 @@ class configure_nginx {
       command => 'curl localhost',
       require => Package['curl'],
     }
-    class { 'nginx': }
-#    manage_repo    => true,
-#    package_source => 'nginx-stable',
+    class { 'nginx':
+    manage_repo    => true,
+    package_source => 'nginx-stable',
+    }
+
+    include nginx
 
     nginx::resource::server { 'mini-proj-simple-site':
       ensure               => present,
